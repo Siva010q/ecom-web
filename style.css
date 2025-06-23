@@ -6,11 +6,13 @@
 }
 
 body{
-    background-color: #f4f4f4;
-    color: #333;
+  color: #0000ff;
+
 }
 header {
-  background-color: #222;
+  background-color: rgb(255, 0, 255);
+  background-image: linear-gradient(rgb(110, 110, 255) , rgb(47, 255, 234)
+  );
   color: white;
   padding: 20px 0;
 }
@@ -40,9 +42,15 @@ nav ul li a {
   text-decoration: none;
 }
 .hero {
+  color: #ffffff;
+  text-shadow: #222 3px 3px ;
   text-align: center;
   padding: 60px 20px;
-  background: #f9fafb;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbGpzcPdb2CRqxAs3iUI_Bq5YGa7yj-Gh42Br5dFVyFmEAVl8U6AX4i9RA1f6uUgdN9w&usqp=CAU);
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  
 }
 
 .hero h2 {
@@ -101,9 +109,11 @@ nav ul li a {
 }
 
 footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #222;
   color: white;
+  text-align: center;
+  padding: 3px;
+  background-color: hotpink;
+  background-image: linear-gradient(to bottom right, rgb(255, 111, 212), rgb(171, 16, 242), rgb(5, 255, 197));
+  
 }
 
