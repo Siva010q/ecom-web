@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Color Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 100%;
+            max-width: 800px;
+            backdrop-filter: blur(5px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .color-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .color-option {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-option.selected {
+            transform: scale(1.15);
+            box-shadow: 0 0 0 4px white, 0 0 0 7px #333;
+        }
+
+        .color-details {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .selected-color-display {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #eee;
+        }
+
+        .color-values {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .color-values p {
+            margin: 5px 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .color-values span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .color-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .save-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .save-btn:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+        }
+
+        .cancel-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .cancel-btn:hover {
+            background-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+
+        .custom-color {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        input[type="color"] {
+            width: 60px;
+            height: 60px;
+            border: none;
+            cursor:pointer;
+        }
+
+        .custom-color button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .custom-color button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Paint Color Selector</h1>
+        
+        <div class="color-picker">
+            <div class="color-option" style="background-color: #FF5733;" data-name="Vibrant Orange" data-rgb="255, 87, 51" data-hex="#FF5733"></div>
+            <div class="color-option" style="background-color: #33FF57;" data-name="Electric Green" data-rgb="51, 255, 87" data-hex="#33FF57"></div>
+            <div class="color-option" style="background-color: #3357FF;" data-name "Bright Blue" data-rgb="51, 87, 255" data-hex="#3357FF"></div>
+            <div class="color-option" style="background-color: #F3FF33;" data-name="Lemon Yellow" data-rgb="243, 255, 51" data-hex="#F3FF33"></div>
+            <div class="color-option" style="background-color: #FF33F3;" data-name="Pink Flash" data-rgb="255, 51, 243" data-hex="#FF33F3"></div>
+            <div class="color-option" style="background-color: #33FFF3;" data-name="Aqua Sky" data-rgb="51, 255, 243" data-hex="#33FFF3"></div>
+            <div class="color-option" style="background-color: #8A2BE2;" data-name="Royal Purple" data-rgb="138, 43, 226" data-hex="#8A2BE2"></div>
+            <div class="color-option" style="background-color: #FF6347;" data-name="Tomato Red" data-rgb="255, 99, 71" data-hex="#FF6347"></div>
+        </div>
+        
+        <div class="color-details">
+            <div class="selected-color-display" id="selectedColorDisplay" style="background-color: #ffffff;"></div>
+            <div class="color-name" id="colorName">Select a color</div>
+            <div class="color-values">
+                <p>RGB: <span id="rgbValue">-</span></p>
+                <p>HEX: <span id="hexValue">-</span></p>
+            </div>
+            
+            <div class="custom-color">
+                <input type="color" id="customColorPicker" value="#ffffff">
+                <button id="addCustomColor">Add Custom Color</button>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="save-btn">Save Selection</button>
+                <a href="index.html"><button class="cancel-btn">Cancel</button></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorOptions = document.querySelectorAll('.color-option');
+            const selectedColorDisplay = document.getElementById('selectedColorDisplay');
+            const colorName = document.getElementById('colorName');
+            const rgbValue = document.getElementById('rgbValue');
+            const hexValue = document.getElementById('hexValue');
+            const customColorPicker = document.getElementById('customColorPicker');
+            const addCustomColorBtn = document.getElementById('addCustomColor');
+            
+            // Select color option
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    colorOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Update display
+                    const bgColor = this.style.backgroundColor;
+                    selectedColorDisplay.style.backgroundColor = bgColor;
+                    colorName.textContent = this.dataset.name;
+                    rgbValue.textContent = this.dataset.rgb;
+                    hexValue.textContent = this.dataset.hex;
+                });
+            });
+            
+            // Add custom color
+            addCustomColorBtn.addEventListener('click', function() {
+                const customColor = customColorPicker.value;
+                
+                // Create a temporary element to get RGB values
+                const tempDiv = document.createElement('div');
+                tempDiv.style.color = customColor;
+                document.body.appendChild(tempDiv);
+                const rgb = getComputedStyle(tempDiv).color;
+                document.body.removeChild(tempDiv);
+                
+                // Add new color option
+                const newColorOption = document.createElement('div');
+                newColorOption.className = 'color-option';
+                newColorOption.style.backgroundColor = customColor;
+                newColorOption.dataset.name = 'Custom Color';
+                newColorOption.dataset.rgb = rgb.replace('rgb(', '').replace(')', '');
+                newColorOption.dataset.hex = customColor;
+                
+                // Add click event to new option
+                newColorOption.addEventListener('click', function() {
+                    colorOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedColorDisplay.style.backgroundColor = customColor;
+                    colorName.textContent = 'Custom Color';
+                    rgbValue.textContent = newColorOption.dataset.rgb;
+                    hexValue.textContent = customColor;
+                });
+                
+                // Add to color picker
+                document.querySelector('.color-picker').appendChild(newColorOption);
+                
+                // Select the new color
+                newColorOption.click();
+            });
+            
+            // Initialize with first color selected
+            if (colorOptions.length > 0) {
+                colorOptions[0].click();
+            }
+        });
+    </script>
+</body>
+</html>

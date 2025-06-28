@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sample E-Commerce</title>
   <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="script.js">
 </head>
 <body>
      <header>
@@ -12,6 +12,7 @@
       <h1 class="logo">Dreamspace Pigment </h1>
       <nav>
         <ul>
+          <li><a href="login.html">Login</a></li>
           <li><a href="#">Home</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">Cart</a></li>
@@ -61,5 +62,23 @@
     <p>9865936675</p><br>
     <p>&copy; 2025 ShopEase. All rights reserved.</p>
   </footer>
+  <!-- Login Reminder Popup -->
+<div class="login-popup" id="loginPopup">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h3>Get the best shopping experience!</h3>
+    <p>Login to save your favorites, track orders, and get exclusive offers.</p>
+    <div class="popup-buttons">
+      <button class="login-btn" onclick="window.location.href='login.html'">Login Now</button>
+      <button class="google-btn" onclick="loginWithGoogle()">
+        <img src="logo_15713430.png " width="30%" height="30%" alt="Google logo">
+        Continue with Google
+      </button>
+    </div>
+    <p class="reminder-text">We'll remind you again in 7 days</p>
+  </div>
+</div>
+
+<script src="script.js"></script>  <!-- Add this if not already present -->
 </body>
 </html>
