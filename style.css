@@ -45,7 +45,7 @@ nav ul li a {
 }
 .hero {
   color: #ffffff;
-  text-shadow: #222 3px 3px ;
+  text-shadow: 0 0 4px #0000ff;  
   text-align: center;
   padding: 60px 20px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbGpzcPdb2CRqxAs3iUI_Bq5YGa7yj-Gh42Br5dFVyFmEAVl8U6AX4i9RA1f6uUgdN9w&usqp=CAU);
@@ -55,12 +55,22 @@ nav ul li a {
   
 }
 
-.hero h2 {
+.hero h4 {
+  color:rgb(35, 16, 91);
   font-size: 36px;
   margin-bottom: 10px;
 }
+.hero p{
+  color: rgb(35, 16, 91);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
 .products {
-  padding: 40px 80px;
+  padding-bottom: 80px ;
+  padding-top: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -86,8 +96,8 @@ nav ul li a {
 }
 
 .product-card img {
-  width: 70%;
-  height: 70%;
+  width: 100%;
+  height: 58%;
   border-radius: 8px;
 }
 
@@ -111,11 +121,61 @@ nav ul li a {
   cursor: pointer;
 }
 
-footer {
-  color: white;
-  text-align: center;
-  padding: 3px;
-  background-color: hotpink;
-  background-image: linear-gradient(to bottom right, rgb(255, 111, 212), rgb(171, 16, 242), rgb(5, 255, 197));
-  
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: middle;
+  padding: 2rem;
+  background-color: rgb(9, 252, 195);
+  background-image: linear-gradient(to bottom left, rgb(79, 18, 133), rgb(50, 133, 154), rgb(44, 125, 223));
+  color: #fff;
+  flex-wrap: wrap;
 }
+
+.site-footer h3{
+  color: #080808;
+  text-shadow: 0 0 3px #0000ff;
+}
+.site-footer li,p{
+  color: #0000ff;
+}
+.dsection1,
+.dsection2 {
+  flex: 1;
+  padding: 1rem;
+}
+
+.dsection1 {
+  text-align: left;
+}
+
+.dsection2 {
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dsection1
+  .dsection2 {
+    text-align: center;
+  }
+}.footer-social {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.footer-social a {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #f40505;
+  transform: scale(1.2);
+}
+
+
