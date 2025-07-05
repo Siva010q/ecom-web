@@ -13,8 +13,7 @@ body{
 }
 header {
   background-color: rgb(255, 0, 255);
-  background-image: linear-gradient(rgb(110, 110, 255) , rgb(47, 255, 234)
-  );
+  background-image: linear-gradient(rgb(110, 110, 255) , rgb(47, 255, 234));
   color: white;
   padding: 20px 0;
 }
@@ -43,21 +42,32 @@ nav ul li a {
   color: white;
   text-decoration: none;
 }
+nav ul li a:hover {
+  color: red;
+  background-color: #0000ff;
+  padding: 5px;
+
+}
+.ourproducts {
+  font-size: 45px;
+  text-shadow: 0 0 4px #000;
+}
+
+
 .hero {
   color: #ffffff;
   text-shadow: 0 0 4px #0000ff;  
   text-align: center;
   padding: 60px 20px;
+  margin-bottom: 40px;
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbGpzcPdb2CRqxAs3iUI_Bq5YGa7yj-Gh42Br5dFVyFmEAVl8U6AX4i9RA1f6uUgdN9w&usqp=CAU);
   background-repeat: no-repeat;
   background-size: cover;
- 
-  
-}
+ }
 
 .hero h4 {
   color:rgb(35, 16, 91);
-  font-size: 36px;
+  font-size: 45px;
   margin-bottom: 10px;
 }
 .hero p{
@@ -66,6 +76,9 @@ nav ul li a {
   margin-bottom: 30px;
 }
 .products {
+  background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkbGpzcPdb2CRqxAs3iUI_Bq5YGa7yj-Gh42Br5dFVyFmEAVl8U6AX4i9RA1f6uUgdN9w&usqp=CAU);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding-bottom: 80px ;
   padding-top: 80px;
   padding-left: 60px;
@@ -79,11 +92,13 @@ nav ul li a {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 20px;
 }
 
 .product-card {
-  background: white;
+  background: rgb(196, 191, 191);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
@@ -137,7 +152,7 @@ nav ul li a {
   text-shadow: 0 0 3px #0000ff;
 }
 .site-footer li,p{
-  color: #0000ff;
+  color: hsl(240, 100%, 19%);
 }
 .dsection1,
 .dsection2 {
